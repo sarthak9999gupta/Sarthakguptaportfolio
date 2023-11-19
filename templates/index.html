@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sarthak | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+#narrow-input {
+    max-width: auto; /* Adjust the max-width according to your preference */
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+
+      #submit-margin {
+        margin-top: 30px;
+        margin-bottom: 75px; /* Adjust the value according to your preference */
+        background-color: #ff6347; /* Set the desired background color */
+        padding: 10px; /* Adjust the padding according to your preference */
+        border-radius: 5px; /* Optional: Add border radius for rounded corners */
+        margin-left: 25%;
+        
+    }
+    .contactpg{
+      background-color: #212528;
+    }
+    .bg-contact{
+      margin-top: 130px;
+    }
+    .card-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -30px;
+    }
+      .flowchart-container {
+      display: flex;
+      align-items: flex-start;
+      margin-left: 10%;
+      margin-right: 10%;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 2.5s;
+    }
+    .flowchart-slide-in {
+      opacity: 6;
+      transform: translateX(0);
+    }
+
+      .flowchart {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 120px;
+        position: relative;
+        
+      }
+  
+      .node {
+        width: 300px;
+        padding: 20px;
+        margin: 20px 0;
+        border: 2px solid #007bff;
+        border-radius: 10px;
+        text-align: center;
+        background-color: #f5f5f5;
+        position: relative;
+      }
+  
+      .achieved {
+        background-color: #4D7CAC;
+        border-color: #4D7CAC;
+        color: #fff;
+      }
+  
+      .milestone {
+        position: absolute;
+        left: -60px;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        background-color: #007bff;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 18px;
+        z-index: 1;
+      }
+  
+      .education {
+        font-size: 16px;
+      }
+  
+      .line {
+        position: absolute;
+        left: -40px;
+        width: 2px;
+        height: 100%;
+        background-color: #007bff;
+        z-index: 0;
+      }
+      .social-button {
+        display: block;
+        width: 40px; /* Adjust the size to your preference */
+        height: 40px; /* Adjust the size to your preference */
+        border-radius: 50%; /* Makes it circular */
+        background-color: #fff; /* Customize the background color */
+        text-align: center;
+        line-height: 60px; /* Vertical centering */
+        color: #fff; /* Text color */
+        font-size: 15px; /* Adjust the font size */
+        text-decoration: none; /* Remove underline */
+
+      }
+      .social-button:hover {
+        background-color: #4D7CAC;
+        color: #fff;
+      }
+      .navbar-brand{
+        font-weight: bold;
+        padding-left: 80px;
+      }
+      .navbar{
+        background-color: #343a40;
+      }
+      .navbar a.navbar-brand, .navbar .nav-link {
+        color: #ffffff; /* Set the text color for the navbar links */
+        font-weight: bold; /* Make the text bold */
+      }
+      .navbar a.nav-link:hover {
+        color: #ff6347; /* Change the text color on hover */
+      }
+      .navbar-nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10px; /* Add some space on the right for even spacing */
+      }
+      
+      /* Style the individual nav items (buttons) */
+      .navbar-nav .nav-item {
+        margin-left: 18px; /* Adjust the spacing between buttons */
+      }
+      
+      /* Remove margin from the first button to align it to the right edge */
+      .navbar-nav .nav-item:first-child {
+        margin-left: 570px;
+      }
+      .progress-container {
+        width: 46%; /* Adjust this value to your preference */
+        margin: 10px; /* Add margin for spacing */
+        padding-left: 120px;
+        margin-top: -50px;
+        
+    }
+    .progress-bar-label {
+        text-align: LEFT;
+        font-weight: bold;
+    }
+    .progress {
+      margin-bottom: 10px; /* Add some space between progress bars */
+      width: 90%;
+      margin-bottom: 75px;
+  }
+      .progress-group {
+        display: flex;
+        justify-content: 15px;
+      }
+      #fullscreen-video {
+        width: 100%;
+        height: auto;
+      }
+      #myImage {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        position: absolute;
+        transform: translate(200%, 120%);
+        border: 2px solid black;
+      }
+      .aboutme {
+        margin-left: 80px;
+        max-width: 600px;
+        margin: auto;
+        position: absolute;
+        transform: translate(80%, -40%);
+      }
+      .head {
+        font-size: 24px;
+        text-align: center;
+        max-width: 600px;
+        margin: auto;
+        padding: 100px;
+        font-weight: bold;
+        color: #4D7CAC;
+      }
+      .contactme{
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold;
+        color: #4D7CAC;
+        max-width: 600px;
+        margin: auto;
+        padding: 35px;
+      }
+      #myskills {
+        margin-top: 100px; /* Add some distance between progress bars */
+
+    }
+    #education{
+      margin-top: -73px;
+    }
+    #experience{
+      margin-top: -10px;
+    }
+      #download-button {
+    background-color: #4D7CAC;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+      #download-button:hover {
+    background-color: #003c6b;
+    color: #fff;
+  }
+
+    </style>
+  <body class="bg-secondary-subtle">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">Sarthak Gupta</a>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <ul class="nav nav-underline">
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="#about-me" onclick="scrollToAbout()" >About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#myskills" onclick="scrollToAbout()" >Skills</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#education" onclick="scrollToAbout()" >Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience" onclick="scrollToAbout()" >Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contac" onclick="scrollToAbout()" >Contact</a>
+                    </li>
+                  </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div>
+        <video autoplay loop muted id="fullscreen-video">
+            <source src="/static/portfolio.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>          
+        <button id="download-button" style="position: absolute; bottom: 205px; left: 270px;">DOWNLOAD RESUME</button>
+        <a href="https://www.instagram.com/Sarthak999Gupta" target="_blank" rel="noopener noreferrer">
+          <img src="/static/logo-instagram.svg" alt="Instagram" class="social-button" style="position: absolute; bottom: 130px; left: 600px;">
+        </a>
+        <a href="https://www.linkedin.com/in/sarthak999gupta" target="_blank" rel="noopener noreferrer">
+          <img src="/static/logo-linkedin.svg" alt="Linkedin" class="social-button" style="position: absolute; bottom: 130px; left: 500px;">
+        </a>
+        <a href="mailto:sarthak999gupta@gmail.com" target="_blank" rel="noopener noreferrer">
+          <img src="/static/mail-sharp.svg" alt="mail" class="social-button" style="position: absolute; bottom: 130px; left: 450px;">
+        </a>
+        <a href="https://github.com/sarthak9999gupta" target="_blank" rel="noopener noreferrer">
+          <img src="/static/logo-github.svg" alt="github" class="social-button" style="position: absolute; bottom: 130px; left: 550px;">
+        </a>
+        
+      </div>
+            <div class="center-container">
+              <img id="myImage" src="/static/myprofile.jpg" alt="Sarthak Gupta">
+            </div>
+            <div id="about-me" class="about-me">
+            <div class="head">
+              <p>About Me</p>
+            </div>
+            <div Class="aboutme">
+              <p>
+                I am a passionate and driven third-year B.Tech student at Maharaja Agarsen Institute of Technology, specializing in Full Stack Development with a strong focus on Cloud Computing. My journey in the world of technology began with a deep-rooted curiosity and a love for coding, and it has evolved into a fulfilling path of innovation and problem-solving. As a full-stack developer, I thrive on creating end-to-end solutions that encompass both the front-end and back-end aspects of web applications. What sets me apart is my keen interest in Cloud Computing. Python is my language of choice, and I have honed my skills to a proficient level.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="head" id="myskills">
+          <p>My Skills</p>
+        </div>
+        <div class="progress-group">
+        <div class="progress-container">
+          <div class="progress-bar-label" aria-label="Python">Python</div>
+        <div class="progress" role="progressbar" aria-label="Python" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 95%">95%</div>
+        </div>
+      </div>
+        <div class="progress-container">
+          <div class="progress-bar-label" aria-label="Bootstrap">Bootstrap</div>
+        <div class="progress" role="progressbar" aria-label="Bootstrap" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%">100%</div>
+        </div>
+      </div>
+    </div>
+    <div class="progress-group">
+      <div class="progress-container">
+        <div class="progress-bar-label" aria-label="HTML">HTML</div>
+      <div class="progress" role="progressbar" aria-label="HTML" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%">80%</div>
+      </div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar-label" aria-label="CSS">CSS</div>
+    <div class="progress" role="progressbar" aria-label="CSS" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%">80%</div>
+    </div>
+  </div>
+</div>
+        <div class="progress-group">
+        <div class="progress-container">
+          <div class="progress-bar-label" aria-label="JS">JS</div>
+        <div class="progress" role="progressbar" aria-label="JS" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 70%">70%</div>
+        </div>
+      </div>
+        <div class="progress-container">
+          <div class="progress-bar-label" aria-label="Node.js">Node.js</div>
+        <div class="progress" role="progressbar" aria-label="Node.js" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 70%">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="progress-group">
+        <div class="progress-container">
+          <div class="progress-bar-label" aria-label="Express">Express</div>
+        <div class="progress" role="progressbar" aria-label="Express" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 65%">65%</div>
+        </div>
+      </div>
+        <div class="progress-container">
+          <div class="progress-bar-label" aria-label="React">React</div>
+        <div class="progress" role="progressbar" aria-label="React" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 65%">65%</div>
+        </div>
+        </div>
+      </div>
+
+      <div class="head" id="education">
+        <p>My Education</p>
+      </div>
+      <div class="flowchart-container">
+        <div class="flowchart">
+          <div class="node">
+            <div class="milestone"></div>
+            <div class="line"></div>
+            <p class="education"><strong>High School</strong><br>The Mann School, 2021</p>
+          </div>
+          <div class="node achieved">
+            <div class="milestone"></div>
+            <div class="line"></div>
+            <p class="education"><strong>Bachelor of Technology in Computer Science</strong><br>Maharaja Agarsen Institute Of Technology, 2025</p>
+          </div>
+        </div>
+        <div class="flowchart" style="margin-left: 170px;">
+        <div class="flowchart">
+          <div class="node">
+            <div class="milestone"></div>
+            <div class="line"></div>
+            <p class="education"><strong>Python Specialization</strong><br>University Of Michigan, 2023</p>
+          </div>
+          <div class="node">
+            <div class="milestone"></div>
+            <div class="line"></div>
+            <p class="education"><strong>Programming with JS,HTML and CSS</strong><br>Duke University, 2023</p>
+          </div>
+          <div class="node">
+            <div class="milestone"></div>
+            <div class="line"></div>
+            <p class="education"><strong>DevOps Software engineering</strong><br>IBM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="head" id="experience">
+      <p>Experiences</p>
+    </div>
+    <div class="card-container" style="margin-bottom: 50px;">
+    <div class="card" style="width: 30rem;">
+      <img src="/static/clone.jpeg" class="card-img-top" alt="Instagram Clone">
+      <div class="card-body">
+        <p class="card-text">Developed a fully functional Instagram clone using HTML and CSS, demonstrating proficiency in front-end web development.</p>
+      </div>
+    </div>
+  </div>
+  <div class="contactpg" id="contac">
+  <div class="contactme">
+    <p>Contact Me</p>
+  </div>
+  <form method="post" action="/contact">
+{% csrf_token %}
+    <div class="mb-3 " id="narrow-input">
+      <label for="exampleFormControlInput1" class="form-label">Your Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+    </div>
+    <div class="mb-3" id="narrow-input">
+      <label for="exampleFormControlInput1" class="form-label">Your Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
+    </div>
+    <div class="mb-3" id="narrow-input">
+      <label for="exampleFormControlInput1" class="form-label">Your Number</label>
+      <input type="Number" class="form-control" id="number" name="number" placeholder="Enter your Number">
+    </div>
+    <div class="mb-3" id="narrow-input">
+      <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+      <textarea class="form-control" id="desc" name="desc" placeholder="Message" rows="7"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit" id="submit-margin" >submit</button>
+
+</form>
+</div>
+      <script>
+        // Get the download button
+        var downloadButton = document.getElementById("download-button");
+      
+        // Add a click event listener to the download button
+        downloadButton.addEventListener("click", function () {
+          // Create an anchor element to trigger the download
+          var downloadLink = document.createElement("a");
+          downloadLink.href = "/static/Sarthak_Resume.pdf"; // Replace with the actual file path
+          downloadLink.download = "Sarthak_Gupta_Resume"; // Replace with the desired file name
+      
+          // Simulate a click on the anchor element
+          downloadLink.click();
+        });
+        var flowchartContainer = document.querySelector(".flowchart-container");
+
+        // Function to handle the animation
+        function animateFlowchart(entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              // When the flowchart section is in view, add the animation class
+              flowchartContainer.classList.add("flowchart-slide-in");
+            } else {
+              // When the flowchart section is out of view, remove the animation class just before scrolling away
+              flowchartContainer.classList.remove("flowchart-slide-in");
+            }
+          });
+        }
+      
+        // Create an Intersection Observer
+        var observer = new IntersectionObserver(animateFlowchart);
+      
+        // Start observing the flowchart container
+        observer.observe(flowchartContainer);
+
+          document.addEventListener("DOMContentLoaded", function () {
+              // Smooth scrolling for anchor links
+              document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                  anchor.addEventListener("click", function (e) {
+                      e.preventDefault();
+      
+                      const targetId = this.getAttribute("href").substring(1);
+                      const targetSection = document.getElementById(targetId);
+      
+                      if (targetSection) {
+                          window.scrollTo({
+                              top: targetSection.offsetTop,
+                              behavior: "smooth"
+                          });
+                      }
+                  });
+              });
+          });
+          function scrollToAbout() {
+            const aboutSection = document.getElementById('about-me');
+
+            if (aboutSection) {
+                aboutSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+        function scrollToAbout() {
+          const aboutSection = document.getElementById('about-me');
+
+          if (aboutSection) {
+              aboutSection.scrollIntoView({
+                  behavior: 'smooth'
+              });
+          }
+      }
+      function scrollToAbout() {
+        const aboutSection = document.getElementById('myskills');
+
+        if (aboutSection) {
+            aboutSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    }
+    function scrollToAbout() {
+      const aboutSection = document.getElementById('education');
+
+      if (aboutSection) {
+          aboutSection.scrollIntoView({
+              behavior: 'smooth'
+          });
+      }
+  }
+  function scrollToAbout() {
+    const aboutSection = document.getElementById('experience');
+
+    if (aboutSection) {
+        aboutSection.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+}
+function scrollToAbout() {
+  const aboutSection = document.getElementById('contac');
+
+  if (aboutSection) {
+      aboutSection.scrollIntoView({
+          behavior: 'smooth'
+      });
+  }
+}
+      </script>
+  </body>
+</html>
